@@ -22,15 +22,15 @@
 ## сборка Docker image (hertrude/1.0.0)
 
 docker build -t hertrude/web:1.0.0
-![alt text](image.png)
+![alt text](pictures/image.png)
 
 docker run --rm -p 8000:8000 hertrude/web:1.0.0
-![alt text](image-1.png)
+![alt text](pictures/image-1.png)
 
 проверим с помощью команды
 curl http://127.0.0.1:8000/hello.html
 
-![alt text](image-2.png)
+![alt text](pictures/image-2.png)
 
 ## размещение image на Docker Hub
 
@@ -56,10 +56,10 @@ kubectl config use-context minikube
 kubectl cluster-info
 kubectl apply -f k8s/deployment-web.yaml
 
-![alt text](image-4.png)
+![alt text](pictures/image-4.png)
 Проверка статуса:
 
-![alt text](image-5.png)
+![alt text](pictures/image-5.png)
 kubectl rollout status deployment/web
 kubectl get pods -l app=web
 
@@ -68,7 +68,7 @@ kubectl describe deployment web
 
 outputs\kubectl-describe-deployment-web.txt
 
-![alt text](image-6.png)
+![alt text](pictures/image-6.png)
 
 ## обеспечение доступа к приложению через Service NodePort
 
@@ -95,7 +95,7 @@ http://127.0.0.1:52290/hello.html
 
 curl http://127.0.0.1:52290/hello.html
 
-![alt text](image-7.png)
+![alt text](pictures/image-7.png)
 
 Файл outputs/curl.txt
 
