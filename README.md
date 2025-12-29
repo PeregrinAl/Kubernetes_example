@@ -38,7 +38,7 @@ docker login
 docker tag web:1.0.0 hertrude/web:1.0.0
 docker push hertrude/web:1.0.0
 
-![alt text](image-3.png)
+![alt text](pictures/image-3.png)
 
 ## Kubernetes Deployment manifest (web, две реплики, probes)
 
