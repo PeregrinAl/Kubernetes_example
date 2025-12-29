@@ -6,12 +6,12 @@
 ---
 
 ## Структура репозитория
-- `Dockerfile` — сборка Docker image
-- `hello.html` — страница приложения с текстом `Hello world`
-- `k8s/deployment-web.yaml` — Kubernetes Deployment manifest (Deployment `web`, replicas `2`, probes)
-- `k8s/service-web-nodeport.yaml` — Kubernetes Service manifest типа NodePort
-- `outputs/kubectl-describe-deployment-web.txt` — результат команды `kubectl describe deployment web`
-- `outputs/curl.txt` — результат команды `curl.exe`, подтверждающий доступ к приложению
+- `Dockerfile`
+- `hello.html` — страница с текстом `Hello world`
+- `kubernetes/deployment-web.yaml` - Kubernetes Deployment manifest 
+- `kubernetes/service-web-nodeport.yaml` - Kubernetes Service manifest типа NodePort
+- `outputs/kubectl-describe-deployment-web.txt` - результат команды `kubectl describe deployment web`
+- `outputs/curl.txt` - подтверждение наличия доступа к приложению
 
 ---
 
@@ -51,17 +51,18 @@ docker push hertrude/web:1.0.0
 
 ## Установка Deployment в кластер:
 
-PS C:\Users\rictus\projects\Kubernetes_example> minikube start
-kubectl config use-context minikube
-kubectl cluster-info
+PS C:\Users\rictus\projects\Kubernetes_example> minikube start \
+kubectl config use-context minikube \
+kubectl cluster-info \
 kubectl apply -f k8s/deployment-web.yaml
 
 ![alt text](pictures/image-4.png)
 Проверка статуса:
 
 ![alt text](pictures/image-5.png)
-kubectl rollout status deployment/web
-kubectl get pods -l app=web
+
+kubectl rollout status deployment/web \
+kubectl get pods -l app=web 
 
 Результат выполнения
 kubectl describe deployment web
@@ -76,7 +77,7 @@ outputs\kubectl-describe-deployment-web.txt
 
 ### Установка Service:
 
-kubectl apply -f k8s/service-web-nodeport.yaml
+kubectl apply -f k8s/service-web-nodeport.yaml \
 kubectl get svc web -o wide
 
 ### Получение Node IP в Minikube
@@ -98,4 +99,3 @@ curl http://127.0.0.1:52290/hello.html
 ![alt text](pictures/image-7.png)
 
 Файл outputs/curl.txt
-
