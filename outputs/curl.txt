@@ -1,0 +1,47 @@
+Server:
+
+PS C:\Users\rictus\projects\Kubernetes_example> curl http://127.0.0.1:8000/hello.html       
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : Hello world
+RawContent        : HTTP/1.0 200 OK
+                    Content-Length: 11
+                    Content-Type: text/html
+                    Date: Mon, 29 Dec 2025 16:02:39 GMT
+                    Last-Modified: Mon, 29 Dec 2025 14:51:10 GMT
+                    Server: SimpleHTTP/0.6 Python/3.14.2
+
+                    Hello world
+Forms             : {}
+Headers           : {[Content-Length, 11], [Content-Type, text/html], [Date, Mon, 29 Dec 2025 16:02:39 GMT], [Last-Modified, Mon, 29 Dec 2025 14:51:10 GMT]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 11
+
+NodePort:
+
+PS C:\Users\rictus\projects\Kubernetes_example> curl http://127.0.0.1:52290/hello.html
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : Hello world
+RawContent        : HTTP/1.0 200 OK
+                    Content-Length: 11
+                    Content-Type: text/html
+                    Date: Mon, 29 Dec 2025 16:00:53 GMT
+                    Last-Modified: Mon, 29 Dec 2025 14:51:10 GMT
+                    Server: SimpleHTTP/0.6 Python/3.14.2
+
+                    Hello world
+Forms             : {}
+Headers           : {[Content-Length, 11], [Content-Type, text/html], [Date, Mon, 29 Dec 2025 16:00:53 GMT], [Last-Modified, Mon, 29 Dec 2025 14:51:10 GMT]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 11
